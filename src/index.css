@@ -58,3 +58,8 @@ textarea,
 select {
   font: inherit;
 }
+
+.font-link1 {
+  font-family: 'Sarpanch';
+  font-size: 22px;
+}

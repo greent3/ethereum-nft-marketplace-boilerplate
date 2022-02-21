@@ -67,7 +67,7 @@ const App = ({ isServerInfo }) => {
     <Layout style={{ height: "100vh", overflow: "auto" }}>
       <Router>
         <Header style={styles.header}>
-          <Logo />
+          {/* <Logo /> */}
           <SearchCollections setInputValue={setInputValue}/>
           <Menu
             theme="light"
@@ -81,6 +81,9 @@ const App = ({ isServerInfo }) => {
             }}
             defaultSelectedKeys={["nftMarket"]}
           >
+            <Menu.Item key="whatIsOg">
+              <NavLink to="/WhatIsOG">❓ What is <span className="font-link1">OG</span>?</NavLink>
+            </Menu.Item>
             <Menu.Item key="nftMarket" onClick={() => setInputValue("explore")} >
               <NavLink to="/NFTMarketPlace">🛒 Explore Market</NavLink>
             </Menu.Item>
@@ -89,6 +92,9 @@ const App = ({ isServerInfo }) => {
             </Menu.Item>
             <Menu.Item key="transactions">
               <NavLink to="/Transactions">📑 Your Transactions</NavLink>
+            </Menu.Item>
+            <Menu.Item key="claim_watch">
+              <NavLink to="/Claim_Watch">⌚ Claim My Watch</NavLink>
             </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>
@@ -113,43 +119,11 @@ const App = ({ isServerInfo }) => {
         </div>
       </Router>
       <Footer style={{ textAlign: "center" }}>
-        <Text style={{ display: "block" }}>
-          ⭐️ Please star this{" "}
-          <a
-            href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            boilerplate
-          </a>
-          , every star makes us very happy!
-        </Text>
-
-        <Text style={{ display: "block" }}>
-          🙋 You have questions? Ask them on the {""}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://forum.moralis.io/t/ethereum-boilerplate-questions/3951/29"
-          >
-            Moralis forum
-          </a>
-        </Text>
-
-        <Text style={{ display: "block" }}>
-          📖 Read more about{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://moralis.io?utm_source=boilerplatehosted&utm_medium=todo&utm_campaign=ethereum-boilerplat"
-          >
-            Moralis
-          </a>
-        </Text>
       </Footer>
     </Layout>
   );
 };
+
 
 export const Logo = () => (
   <div style={{ display: "flex" }}>

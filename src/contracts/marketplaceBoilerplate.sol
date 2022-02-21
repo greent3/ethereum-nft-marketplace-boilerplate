@@ -83,6 +83,7 @@ contract marketPlaceBoilerPlate is ReentrancyGuard {
         uint256 itemId
         ) public payable nonReentrant {
             uint price = idToMarketItem[itemId].price;
+            //uint royaltyFee = price * 1000 / 10000;       //calculate 10% royalty fee based on price
             uint tokenId = idToMarketItem[itemId].tokenId;
             bool sold = idToMarketItem[itemId].sold;
             require(msg.value == price, "Please submit the asking price in order to complete the purchase");
@@ -118,4 +119,3 @@ contract marketPlaceBoilerPlate is ReentrancyGuard {
       
 }
 
-/// Thanks for inspiration: https://github.com/dabit3/polygon-ethereum-nextjs-marketplace/
